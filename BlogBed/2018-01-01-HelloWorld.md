@@ -1,5 +1,6 @@
 ---
 title: Hello World
+date: 2018-01-01
 categories: 
 tags: ['Markdown']
 article_header:
