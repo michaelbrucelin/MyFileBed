@@ -7,7 +7,7 @@ article_header:
     type: cover
 ---
 
-### link 标签
+### link标签
 
 - #### 引用打印模式下的样式表
 
@@ -34,7 +34,7 @@ article_header:
 <link rel="icon" type="image/x-icon" href="./favicon.ico" />
 ```
 
-### base 标签
+### base标签
 
 - #### 设置当前页面的基准url
 
