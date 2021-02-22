@@ -32,7 +32,9 @@ cd "${HelloBlogPath}_posts/" && rm -rf "${HelloBlogPath}_posts/"*
 cd ${HelloBlogPath}
 cp -r "${MyFileBedPath}BlogBed/"* "${HelloBlogPath}_posts/"
 
+echo '========================================================================================='
 jekyll build  # 本地执行一次构建，目的是拿到sitemap，脚本执行自动提交给搜索引擎
+echo '========================================================================================='
 
 for i in {3..1}; do echo $i; sleep 1s; done
 echo -e "\033[32mgit push HelloBlog\033[0m"
