@@ -68,6 +68,9 @@ echo -e "\n"
 echo -e "\033[32m准备commit sitemap to baidu\033[0m"
 python3 /root/GithubProjects/MyScripts/Python/commit_sitemap_baidu.py 
 
+# 提交sitemap给google由github action来完成
+# google从国内访问，网络不是很好，交给github去操作，效果会好很多
+
 # done
 set +e
 echo -e "\n"

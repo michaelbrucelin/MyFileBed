@@ -15,6 +15,8 @@ article_header:
 <link rel="stylesheet" type="text/css" media="print" href="./css/print.css" />
 ```
 
+<!--more-->
+
 - #### 引用特定状态下的样式表
 
 设置在显示器上显示时，同时页面宽度在[512px, 1024px]之间时的样式
