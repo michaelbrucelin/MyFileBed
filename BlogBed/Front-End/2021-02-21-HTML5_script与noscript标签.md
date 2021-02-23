@@ -19,6 +19,8 @@ article_header:
 <script type="text/javascript" src="javascript.js" defer></script>
 ```
 
+<!--more-->
+
 - #### 异步执行脚本
 
 如果script元素引用的脚本是广告脚本等，与网页没有太大关系，而且有可能会加载失败，可以使用async属性，让脚本异步执行，这样就不会影响整个网页的加载了  
