@@ -34,7 +34,7 @@ cp -r "${MyFileBedPath}BlogBed/"* "${HelloBlogPath}_posts/"
 
 for i in {3..1}; do echo $i; sleep 1s; done
 LANG=en_US.UTF-8
-jekyll build  # 本地执行一次构建，目的是拿到sitemap，脚本执行自动提交给搜索引擎
+bundle exec jekyll build  # 本地执行一次构建，目的是拿到sitemap，脚本执行自动提交给搜索引擎
 LANG=C
 
 for i in {3..1}; do echo $i; sleep 1s; done
