@@ -32,8 +32,6 @@ cd "${HelloBlogPath}_posts/" && rm -rf "${HelloBlogPath}_posts/"*
 cd ${HelloBlogPath}
 cp -r "${MyFileBedPath}BlogBed/"* "${HelloBlogPath}_posts/"
 
-
-
 # Jekyll的文件名有特殊要求，在文件名前面添加日期
 cd "${HelloBlogPath}_posts/"
 for i in $(find . -name '*.md'); do
@@ -43,8 +41,6 @@ for i in $(find . -name '*.md'); do
     FILEDATE=$(grep -E '^date: [0-9]{4}-[0-9]{2}-[0-9]{2}$' $i | grep -Eo '[0-9]{4}-[0-9]{2}-[0-9]{2}')
     mv "${i}" "${BASEPATH}/${FILEDATE}-${FILENAME}"
 done
-
-
 
 for i in {3..1}; do echo $i; sleep 1s; done
 LANG=en_US.UTF-8
