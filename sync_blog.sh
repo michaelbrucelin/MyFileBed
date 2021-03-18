@@ -35,7 +35,7 @@ cp -r "${MyFileBedPath}BlogBed/"* "${HelloBlogPath}_posts/"
 
 
 # Jekyll的文件名有特殊要求，在文件名前面添加日期
-cd ${HelloBlogPath}
+cd "${HelloBlogPath}_posts/"
 for i in $(find . -name '*.md'); do
     dos2unix $i
     BASEPATH=${i%/*}
