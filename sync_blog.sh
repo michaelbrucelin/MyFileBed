@@ -11,7 +11,7 @@ MyFileBedPath=/root/GithubProjects/MyFileBed/
 HelloBlogPath=/root/GithubProjects/HelloBlog/
 HalloBlogPath=/root/GithubProjects/HalloBlog/
 
-set -e  # 脚本一旦报错，立刻跳出脚本，而不是继续向下执行
+set -euo pipefail
 
 # 先commit到MyFileBed仓库
 echo -e "\033[32m准备Commit MyFileBed仓库\033[0m"
@@ -31,6 +31,20 @@ echo -e "\033[32mSync HelloBlog\033[0m"
 cd "${HelloBlogPath}_posts/" && rm -rf "${HelloBlogPath}_posts/"*
 cd ${HelloBlogPath}
 cp -r "${MyFileBedPath}BlogBed/"* "${HelloBlogPath}_posts/"
+
+
+
+# Jekyll的文件名有特殊要求，在文件名前面添加日期
+cd ${HelloBlogPath}
+for i in $(find . -name '*.md'); do
+    dos2unix $i
+    BASEPATH=${i%/*}
+    FILENAME=${i##*/}
+    FILEDATE=$(grep -E '^date: [0-9]{4}-[0-9]{2}-[0-9]{2}$' $i | grep -Eo '[0-9]{4}-[0-9]{2}-[0-9]{2}')
+    mv "${i}" "${BASEPATH}/${FILEDATE}-${FILENAME}"
+done
+
+
 
 for i in {3..1}; do echo $i; sleep 1s; done
 LANG=en_US.UTF-8
@@ -72,6 +86,6 @@ python3 /root/GithubProjects/MyScripts/Python/commit_sitemap_baidu.py
 # google从国内访问，网络不是很好，交给github去操作，效果会好很多
 
 # done
-set +e
+# set +e
 echo -e "\n"
 echo -e "\033[32mDONE!\033[0m"
